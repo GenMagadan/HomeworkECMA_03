@@ -43,9 +43,16 @@
         quantity() {
           return `Количество товара - ${this.#quantityProducts}`;
         }
+        changePrice(newPrice) {
+          this.#priceProduct = newPrice;
+        }
+        changeQuantity(newQuantity) {
+          this.#quantityProducts = newQuantity;
+        }
+
         getCost() {
           if (this.#quantityProducts > Product.#maxQuantity) {
-            throw new Error('Quantity is too high');
+            return new Error('Quantity is too high');
           } else {
             return `Сумма покупки = ${
               this.#priceProduct * this.#quantityProducts
@@ -60,6 +67,12 @@
       console.log(product1.price()); // 50
       console.log(product1.quantity()); // 200
       console.log(product1.getCost()); // 10000
+      console.log('Изменение цены и количества');
+      product1.changePrice(300);
+      product1.changeQuantity(700);
+      console.log(product1.price());
+      console.log(product1.quantity());
+      console.log(product1.getCost());
       console.log('');
       console.log('Второй товар');
       const product2 = new Product('Ручка', 10, 5000);
