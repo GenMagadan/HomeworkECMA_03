@@ -12,13 +12,13 @@
 
 Пример использования классов:
 
-- const employee = new Employee(""John Smith"");
-- employee.displayInfo();
+    const employee = new Employee(""John Smith"");
+    employee.displayInfo();
 
 Вывод: Name: John Smith
 
-- const manager = new Manager(""Jane Doe"", ""Sales"");
-- manager.displayInfo();
+    const manager = new Manager(""Jane Doe"", ""Sales"");
+    manager.displayInfo();
 
 Вывод: Name: Jane Doe Department: Sales
 
@@ -33,14 +33,13 @@
 
 Пример использования класса:
 
-- class Product { constructor(name, price) {this.name = name; this.price = price;}}
-- const order = new Order(12345);
-- const product1 = new Product(""Phone"", 500);
-- order.addProduct(product1);
-- const product2 = new Product(""Headphones"", 100);
-- order.addProduct(product2);
-
-console.log(order.getTotalPrice());
+    class Product { constructor(name, price) {this.name = name; this.price = price;}}
+    const order = new Order(12345);
+    const product1 = new Product(""Phone"", 500);
+    order.addProduct(product1);
+    const product2 = new Product(""Headphones"", 100);
+    order.addProduct(product2);
+    console.log(order.getTotalPrice());
 
 Вывод: 600
 
@@ -50,9 +49,20 @@ console.log(order.getTotalPrice());
 
 Пример работы кода:
 
-- const product1 = new Product('Тетрадь', 50, 200);
-- console.log(product1.name); // "Тетрадь"
-- console.log(product1.price); // 50
-- console.log(product1.quantity); // 200
-- console.log(product1.getCost()); // 10000
-- const product2 = new Product('Ручка', 10, 5000); // выбросится ошибка "Quantity is too high"
+    const product1 = new Product('Тетрадь', 50, 200);
+    console.log(product1.name); // "Тетрадь"
+    console.log(product1.price); // 50
+    console.log(product1.quantity); // 200
+    console.log(product1.getCost()); // 10000
+    const product2 = new Product('Ручка', 10, 5000); // выбросится ошибка "Quantity is too high"
+
+4. Создать класс "Пользователь" с приватными полями "имя", "возраст" и "электронная почта". Класс должен иметь публичные методы "изменить имя", "изменить возраст" и "изменить электронную почту", которые будут изменять соответствующие поля объекта. Также класс должен иметь статическое поле "максимальный возраст", которое будет задавать максимально допустимый возраст для всех создаваемых объектов.
+
+Пример:
+
+    const user1 = new User('John', 30);
+    console.log(user1.getName()); // "John"
+    user1.setName('Mike');
+    console.log(user1.getName()); // "Mike"
+    console.log(User.getMaxAge()); // 120
+    const user2 = new User('Jane', 150); // Error: Age is too high
